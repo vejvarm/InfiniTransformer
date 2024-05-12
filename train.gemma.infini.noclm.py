@@ -441,6 +441,7 @@ def main():
             trust_remote_code=args.trust_remote_code,
             # torch_dtype="auto",
             device_map="auto",
+            # device_map="cuda",
         )
     else:
         logger.info("Training new model from scratch")
@@ -642,7 +643,7 @@ def main():
     )
     logger.info(f"  Gradient Accumulation steps = {gradient_accumulation_steps}")
     logger.info(f"  Total optimization steps = {args.max_train_steps}")
-    logger.info(f"  Number of model parameters = {model.num_parameters()}")
+    # logger.info(f"  Number of model parameters = {model.num_parameters()}")
     # Only show the progress bar once on each machine.
     progress_bar = tqdm(
         range(args.max_train_steps), disable=not accelerator.is_local_main_process

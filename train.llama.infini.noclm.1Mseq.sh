@@ -7,8 +7,8 @@ accelerate launch --num_processes=1 --mixed_precision='bf16' \
     --segment_length=2048 \
     --block_size=1048576 \
     --dataset_name='JeanKaddour/minipile' \
-    --per_device_train_batch_size=2 \
-    --per_device_eval_batch_size=2 \
+    --per_device_train_batch_size=1 \
+    --per_device_eval_batch_size= \
     --output_dir='./models/llama-3-8b-infini-noclm-minipile' \
     --checkpointing_steps=1000 \
     --num_train_epochs=1 \

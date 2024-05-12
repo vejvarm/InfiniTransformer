@@ -441,7 +441,7 @@ def main():
             low_cpu_mem_usage=args.low_cpu_mem_usage,
             trust_remote_code=args.trust_remote_code,
             # torch_dtype="auto",
-            device_map="auto",
+            device_map="cuda",
         )
     else:
         logger.info("Training new model from scratch")
